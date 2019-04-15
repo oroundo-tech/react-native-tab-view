@@ -278,7 +278,7 @@ export default class TabBar<T: Route> extends React.Component<Props<T>, State> {
 
     return (
       <Animated.View style={[styles.tabBar, style]}>
-        <Animated.View
+        {routes.length > 1 ? <Animated.View
           pointerEvents="none"
           style={[
             styles.indicatorContainer,
@@ -297,7 +297,7 @@ export default class TabBar<T: Route> extends React.Component<Props<T>, State> {
             width: tabWidth,
             style: indicatorStyle,
           })}
-        </Animated.View>
+        </Animated.View> : null }
         <View style={styles.scroll}>
           <Animated.ScrollView
             horizontal
